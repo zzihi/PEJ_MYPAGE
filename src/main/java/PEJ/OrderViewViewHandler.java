@@ -58,15 +58,15 @@ public class OrderViewViewHandler {
         }
     }
     @StreamListener(KafkaProcessor.INPUT)
-    public void whenDeliveryCanceled_then_UPDATE_2(@Payload DeliveryCanceled deliveryCanceled) {
+    public void whenDeliveryCanceled_then_UPDATE_2(@Payload DeliveryCancelled deliveryCancelled) {
         try {
-            if (deliveryCanceled.isMe()) {
+            if (deliveryCancelled.isMe()) {
                 // view 객체 조회
-                List<OrderView> orderViewList = orderViewRepository.findByOrderId(deliveryCanceled.getOrderId());
+                List<OrderView> orderViewList = orderViewRepository.findByOrderId(deliveryCancelled.getOrderId());
                 for(OrderView orderView : orderViewList){
                     // view 객체에 이벤트의 eventDirectValue 를 set 함
-                    orderView.setOrderStatus(deliveryCanceled.getDeliveryStatus());
-                    orderView.setDeliveryStatus(deliveryCanceled.getDeliveryStatus());
+                    orderView.setOrderStatus(deliveryCancelled.getDeliveryStatus());
+                    orderView.setDeliveryStatus(deliveryCancelled.getDeliveryStatus());
                     // view 레파지 토리에 save
                     orderViewRepository.save(orderView);
                 }

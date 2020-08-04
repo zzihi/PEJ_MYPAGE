@@ -2,6 +2,7 @@ PEJ\OrderViewRepository.class
 PEJ\Shipped.class
 PEJ\OutOfStock.class
 PEJ\MyPageApplication.class
+PEJ\DeliveryCancelled.class
 PEJ\ProductReceived.class
 PEJ\config\kafka\KafkaProcessor.class
 PEJ\PolicyHandler.class
@@ -15,5 +16,4 @@ PEJ\Ordered.class
 PEJ\AbstractEvent.class
 PEJ\InventoryChanged.class
 PEJ\OrderView.class
-PEJ\DeliveryCanceled.class
 PEJ\Cancelled.class

@@ -1,6 +1,6 @@
 package PEJ;
 
-public class DeliveryCanceled extends AbstractEvent {
+public class DeliveryCancelled extends AbstractEvent {
 
     private Long id;
     private String orderId;
